@@ -1,0 +1,35 @@
+# 开发环境
+online: true       # 线上才验证登录
+
+spring:
+    profiles:
+      active: dev
+
+server:
+  port: 8080
+#   servlet:
+#    path: /ai
+
+#Actuator
+management:
+  server:
+    prot: 9001
+    security:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*' #刷新配置
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+my:
+  name: bfylu
+  age: 24
+  number: ${random.int}
+  uuid: ${random.uuid}
+  max: ${random.int(10)}
+  value: ${random.value}
+  greeting: hi,i`m ${my.name}
+
